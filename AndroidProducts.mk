@@ -5,10 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_Infinix-X680.mk
+LOCAL_PATH := $(call my-dir)
 
-COMMON_LUNCH_CHOICES := \
-    omni_Infinix-X680-user \
-    omni_Infinix-X680-userdebug \
-    omni_Infinix-X680-eng
+ifeq ($(TARGET_DEVICE),Infinix-X680)
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
+endif
